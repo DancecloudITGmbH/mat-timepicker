@@ -1,0 +1,65 @@
+{
+  "name": "mat-timepicker",
+  "version": "5.1.4",
+  "peerDependencies": {
+    "@angular/cdk": "^13.2.4",
+    "@angular/common": "~13.2.4",
+    "@angular/compiler": "~13.2.4",
+    "@angular/core": "~13.2.4",
+    "@angular/forms": "~13.2.4",
+    "@angular/material": "^13.2.4",
+    "@angular/platform-browser": "~13.2.4",
+    "@angular/platform-browser-dynamic": "~13.2.4",
+    "@angular/router": "~13.2.4",
+    "rxjs": "~6.5.4",
+    "zone.js": "~0.11.4"
+  },
+  "dependencies": {
+    "tslib": "^2.3.1"
+  },
+  "author": {
+    "name": "Iliya Idakiev",
+    "url": "https://developers.google.com/community/experts/directory/profile/profile-iliya_idakiev"
+  },
+  "homepage": "https://github.com/IliaIdakiev/angular-material-timepicker",
+  "license": "MIT",
+  "keywords": [
+    "time",
+    "picker",
+    "timepicker",
+    "material timepicker",
+    "angular material",
+    "angular",
+    "angular 2",
+    "angular 3",
+    "angular 4",
+    "angular 5",
+    "angular 6",
+    "angular 7",
+    "angular 8",
+    "angular 9"
+  ],
+  "module": "fesm2015/mat-timepicker.mjs",
+  "es2020": "fesm2020/mat-timepicker.mjs",
+  "esm2020": "esm2020/mat-timepicker.mjs",
+  "fesm2020": "fesm2020/mat-timepicker.mjs",
+  "fesm2015": "fesm2015/mat-timepicker.mjs",
+  "typings": "mat-timepicker.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./mat-timepicker.d.ts",
+      "esm2020": "./esm2020/mat-timepicker.mjs",
+      "es2020": "./fesm2020/mat-timepicker.mjs",
+      "es2015": "./fesm2015/mat-timepicker.mjs",
+      "node": "./fesm2015/mat-timepicker.mjs",
+      "default": "./fesm2020/mat-timepicker.mjs"
+    }
+  },
+  "sideEffects": false,
+  "scripts": {
+    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy in full compilation mode. This is not allowed.\\nPlease delete and rebuild the package with Ivy partial compilation mode, before attempting to publish.\\n')\" && exit 1"
+  }
+}

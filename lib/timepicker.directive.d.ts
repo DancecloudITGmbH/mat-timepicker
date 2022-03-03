@@ -1,0 +1,122 @@
+import { ControlValueAccessor, NgForm, NgControl, FormGroupDirective } from '@angular/forms';
+import { OnInit, EventEmitter, ElementRef, OnChanges, Renderer2, AfterViewInit, OnDestroy, SimpleChanges, NgZone, TemplateRef } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatFormFieldControl, MatFormField } from '@angular/material/form-field';
+import { ClockMode } from './interfaces-and-types';
+import { Subject } from 'rxjs';
+import { FocusMonitor } from '@angular/cdk/a11y';
+import { ErrorStateMatcher } from '@angular/material/core';
+import { Platform } from '@angular/cdk/platform';
+import * as i0 from "@angular/core";
+export interface MatTimepickerButtonTemplateContext {
+    $implicit: () => void;
+    label: string;
+}
+export declare class MatTimepickerDirective implements OnInit, OnChanges, AfterViewInit, OnDestroy, ControlValueAccessor, MatFormFieldControl<any> {
+    ngControl: NgControl;
+    dialog: MatDialog;
+    private renderer;
+    private zone;
+    private fm;
+    private elRef;
+    private ngZone;
+    protected _platform: Platform;
+    private _parentForm;
+    private _matFormFiled;
+    private _parentFormGroup;
+    static nextId: number;
+    /** Whether the component is being rendered on the server. */
+    readonly _isServer: boolean;
+    _errorState: boolean;
+    get errorState(): boolean;
+    get disabled(): boolean;
+    set disabled(value: boolean);
+    protected _disabled: boolean;
+    get id(): string;
+    set id(value: string);
+    protected _id: string;
+    get readonly(): boolean;
+    set readonly(value: boolean);
+    private _readonly;
+    private isAlive;
+    stateChanges: Subject<void>;
+    protected _uid: string;
+    get shouldLabelFloat(): boolean;
+    describedBy: string;
+    errorStateMatcher: ErrorStateMatcher;
+    get required(): boolean;
+    set required(req: boolean);
+    private _required;
+    get placeholder(): string;
+    set placeholder(plh: string);
+    private _placeholder;
+    focused: boolean;
+    private pattern;
+    private allowed24HourMap;
+    private allowed12HourMap;
+    private isInputFocused;
+    okButtonTemplate: TemplateRef<MatTimepickerButtonTemplateContext> | null;
+    cancelButtonTemplate: TemplateRef<MatTimepickerButtonTemplateContext> | null;
+    /** Override the label of the ok button. */
+    okLabel: string;
+    /** Override the label of the cancel button. */
+    cancelLabel: string;
+    /** Override the ante meridiem abbreviation. */
+    anteMeridiemAbbreviation: string;
+    /** Override the post meridiem abbreviation. */
+    postMeridiemAbbreviation: string;
+    /** Sets the clock mode, 12-hour or 24-hour clocks are supported. */
+    mode: ClockMode;
+    color: string;
+    disableDialogOpenOnClick: boolean;
+    strict: boolean;
+    controlType: string;
+    private listeners;
+    minDate: Date;
+    maxDate: Date;
+    private _isPm;
+    private _value;
+    private _formattedValueString;
+    private _skipValueChangeEmission;
+    set value(value: Date);
+    get value(): Date;
+    get isPm(): boolean;
+    get empty(): boolean;
+    private get formattedValueString();
+    private currentValue;
+    private modalRef;
+    private onChangeFn;
+    private onTouchedFn;
+    private combination;
+    timeChange: EventEmitter<any>;
+    invalidInput: EventEmitter<any>;
+    inputHandler(): void;
+    keydownHandler(event: any): boolean;
+    keyupHandler(event: any): void;
+    focusHandler(): void;
+    focusoutHandler(): void;
+    constructor(ngControl: NgControl, dialog: MatDialog, renderer: Renderer2, zone: NgZone, fm: FocusMonitor, elRef: ElementRef<HTMLElement>, ngZone: NgZone, _platform: Platform, _parentForm: NgForm, _matFormFiled: MatFormField, _parentFormGroup: FormGroupDirective, _defaultErrorStateMatcher: ErrorStateMatcher);
+    setDescribedByIds(ids: string[]): void;
+    onContainerClick(event: MouseEvent): void;
+    setInputElementValue(value: any): void;
+    validate(): {
+        dateRange: boolean;
+    };
+    ngAfterViewInit(): void;
+    clickHandler: (e: FocusEvent) => void;
+    ngOnInit(): void;
+    generateAllowedMap(): void;
+    ngOnChanges(simpleChanges: SimpleChanges): void;
+    checkValidity(value: Date): boolean;
+    writeValue(value: Date, isInnerCall?: boolean): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState?(isDisabled: boolean): void;
+    showDialog(): void;
+    handleChange: (newValue: any) => void;
+    handleOk: (value: any) => void;
+    handleCancel: () => void;
+    ngOnDestroy(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<MatTimepickerDirective, [{ optional: true; self: true; }, null, null, null, null, null, null, null, { optional: true; }, { optional: true; }, { optional: true; }, null]>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<MatTimepickerDirective, "input[matTimepicker]", ["matTimepicker"], { "disabled": "disabled"; "id": "id"; "readonly": "readonly"; "errorStateMatcher": "errorStateMatcher"; "required": "required"; "placeholder": "placeholder"; "okButtonTemplate": "okButtonTemplate"; "cancelButtonTemplate": "cancelButtonTemplate"; "okLabel": "okLabel"; "cancelLabel": "cancelLabel"; "anteMeridiemAbbreviation": "anteMeridiemAbbreviation"; "postMeridiemAbbreviation": "postMeridiemAbbreviation"; "mode": "mode"; "color": "color"; "disableDialogOpenOnClick": "disableDialogOpenOnClick"; "strict": "strict"; "minDate": "minDate"; "maxDate": "maxDate"; "value": "value"; }, { "timeChange": "timeChange"; "invalidInput": "invalidInput"; }, never>;
+}
